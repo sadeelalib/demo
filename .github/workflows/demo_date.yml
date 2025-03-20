@@ -1,0 +1,17 @@
+name: Print Date and Time
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:  # Manually run karne ke liye
+
+jobs:
+  print_datetime:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Print Current Date and Time
+        run: echo "Current Date and Time: $(date)"
